@@ -1,0 +1,41 @@
+body {
+    background: #EBE8E2;
+    background-size: 150px;
+}
+
+.redbox {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: black;
+    /*border: 1px solid white;*/
+    background: url("https://github.com/lea-beaulieu/module1GAME/blob/temporary/redbox.png?raw=true") center no-repeat;
+    background-size: contain;
+    transition: transform .2s;
+}
+
+.redbox:hover {
+    transform: scale(1.1);
+}
+
+.bluebox {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: black;
+    /*border: 1px solid white;*/
+    background: url("https://github.com/lea-beaulieu/module1GAME/blob/temporary/bluebox.png?raw=true") center no-repeat;
+    background-size: contain;
+    transition: transform .2s;
+}
+
+.bluebox:hover {
+    transform: scale(1.1);
+}
+
+#score {
+    font-size: 300%;
+    position: relative;
+    z-index: 999;
+    pointer-events: none;
+}
