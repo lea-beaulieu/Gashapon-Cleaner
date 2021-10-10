@@ -1,6 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: #EBE8E2;
-    background-size: 150px;
+    background-image: url(https://github.com/lea-beaulieu/module1GAME/blob/temporary/gashaponwithDBZwithouybackround.png?raw=true);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position-x: center;
+    background-position: right 10%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.container img.machine-illustration {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: center;
+    order: 0;
+    width: 500px;
+    margin-right: 3em;
+    transform: translateY(-1em);
+}
+
+.game {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 2;
+    align-self: baseline;
+    order: 1;
+    width: 490px;
+    position: absolute;
 }
 
 .redbox {
