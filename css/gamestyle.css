@@ -14,15 +14,29 @@ body {
     */
 }
 
+table {
+    background-color: lime;
+}
+
+strong {
+    font-size: 28px;
+    letter-spacing: -2px;
+    font-style: bolder;
+    text-align: justify;
+}
+
 .parameters {
     position: fixed;
-    width: 200px;
     font-family: 'Gill Sans Nova Cond XBd', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #0059d1;
-    display: flex;
+    left: 40px;
+    width: 420px;
+    text-align: center;
+    /*display: flex;
     flex-flow: column;
     flex-direction: column;
     justify-content: flex-start;
+    */
 }
 
 .container {
@@ -94,19 +108,53 @@ body {
 
 #score {
     font-size: 54px;
-    position: relative;
+    position: absolute;
+    font-weight: bolder;
     z-index: 10;
     pointer-events: none;
+    font-stretch: extra-expanded;
+    top: 350px;
 }
 
 #startbutton {
     position: absolute;
-    left: 800px;
-    top: 600px;
-    z-index: 11;
+    left: 780px;
+    top: 615px;
+    z-index: 999;
+    color: white;
+    background: transparent;
+    font-family: 'Gill Sans Nova Cond XBd', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    border: none;
+    font-weight: bold;
+}
+
+#startbutton:hover {
+    transform: scale(1.05);
+    color: #EA4800;
 }
 
 #countdown {
-    font-size: 54px;
+    top: 100px;
+    font-size: 90px;
+    line-height: 22px;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+#instructions {
+    font-size: 12px;
+    letter-spacing: -2px;
     font-weight: bolder;
+    background: #ffc000;
+    padding: 5px, 10px, 5px, 10px;
+    border-style: solid;
+    border-width: 15px;
+    border-color: #EA4800;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    position: absolute;
+    top: 200px;
 }
