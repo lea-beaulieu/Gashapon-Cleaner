@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* reset */
+    font: 200 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-image: url(/Users/beaulieulea/IRONHACK/game/module1GAME/images/tiledestination.png);
+    background: #06365f linear-gradient(180deg, rgba(91, 126, 156, 1) 0%, rgba(60, 98, 133, 1) 38%, rgba(47, 90, 128, 1) 38%, rgba(92, 126, 155, 1) 38%, rgba(244, 245, 247, 1) 38%, rgba(253, 253, 253, 1) 60%, white 100%) top left repeat-x;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding-left: 5em;
+    padding-right: 4em;
+}
