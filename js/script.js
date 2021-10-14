@@ -28,7 +28,7 @@ var remainTime;
 
 //(CONFIG) 1. Defining the countdown rules
 function start() {
-    remainTime = 35;
+    remainTime = 30;
     //for debug
     console.log("yes");
     render();
@@ -55,10 +55,10 @@ function render() {
 };
 
 function defineStatus() {
-    if (document.getElementById('countdown').textContent === "00:00" && pts >= 30) {
+    if (document.getElementById('countdown').textContent === "00:00" && pts >= 24) {
         countdown.innerHTML = "00:00";
         setTimeout(alert("won"), 2000)
-    } else if (document.getElementById('countdown').textContent === "00:00" && pts < 30) {
+    } else if (document.getElementById('countdown').textContent === "00:00" && pts < 24) {
         countdown.innerHTML = "00:00";
         setTimeout(alert("lose"), 2000)
     }
@@ -67,22 +67,22 @@ function defineStatus() {
 
 // THE GAME CONTENT
 
-// (CONFIG) Counting occurences of sequence (10 sequences in total during the game)
+// (CONFIG) Counting occurences of sequence (8 sequences in total during the game)
 let counterBoxSequence = 1;
 
 
-// (CONFIG) Defining the BoxSequence launch, i.e. 3 Red boxes + 1 Blue box each 2 seconds during 10 seconds
+// (CONFIG) Defining the BoxSequence launch, i.e. 3 Red boxes + 1 Blue box each 2 seconds during 24 seconds
 const boxSequence = function() {
-    launchRedBox();
-    launchRedBox();
-    launchRedBox();
     launchBlueBox();
+    launchRedBox();
+    setTimeout(launchRedBox, 1000);
+    setTimeout(launchRedBox, 2000);
     //for Debug
     console.log(counterBoxSequence)
     timeoutId = setTimeout(boxSequence, 3000);
     counterBoxSequence += 1;
 
-    if (counterBoxSequence > 10) {
+    if (counterBoxSequence > 8) {
         clearTimeout(timeoutId);
     }
 };
@@ -101,12 +101,12 @@ function launchRedBox() {
     $div.style.top = `${top}px`;
 
     // Adding this NEW div within the "tab" section 
-    document.getElementsByClassName('balls')[0].appendChild($div);
+    document.getElementsByClassName('bodybox')[0].appendChild($div);
 
     // Setting the actions WHEN clicking on the red box
     $div.onclick = function() {
         // Removing the red box
-        document.getElementsByClassName('balls')[0].removeChild($div);
+        document.getElementsByClassName('bodybox')[0].removeChild($div);
         // Updating the score (+1pts for each red box)
         document.querySelector('#score span').innerText = ++pts;
     }
@@ -128,7 +128,7 @@ function launchBlueBox() {
 
 
     // Adding this NEW div within the "tab" section 
-    document.getElementsByClassName('balls')[0].appendChild($div);
+    document.getElementsByClassName('bodybox')[0].appendChild($div);
 
 
     // Stopping the game WHEN clicking on a blue box
