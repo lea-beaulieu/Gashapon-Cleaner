@@ -1,10 +1,23 @@
 // THE GENERAL PARAMETERS
 
 // (CONFIG) 0.B. Defining the random method
+function randLeft(fromLeft = 0, toLeft = 400) {
+
+    return Math.floor(fromLeft + Math.random() * (toLeft - fromLeft));
+}
+
+function randTop(fromTop = 30, toTop = 300) {
+
+    return Math.floor(fromTop + Math.random() * (toTop - fromTop));
+}
+
+
+/*(CONFIG) 0.B. Defining the random method for screen, NA FOR THE GAME
 function rand(from = 0, to = 1) {
 
     return Math.floor(from + Math.random() * (to - from));
 }
+*/
 
 
 // (CONFIG) 0.A. Defining the inital parameters, i.e scoring and timing
@@ -82,8 +95,8 @@ function launchRedBox() {
     let $div = document.createElement('div');
     $div.classList.add('redbox');
     // Setting a random position where the box will appear
-    let left = rand(0, window.innerWidth - 100);
-    let top = rand(0, window.innerHeight - 100);
+    let left = randLeft();
+    let top = randTop();
     $div.style.left = `${left}px`;
     $div.style.top = `${top}px`;
 
@@ -108,8 +121,8 @@ function launchBlueBox() {
     let $div = document.createElement('div');
     $div.classList.add('bluebox');
     // Setting a random position where the box will appear
-    let left = rand(0, window.innerWidth - 100);
-    let top = rand(0, window.innerHeight - 100);
+    let left = randLeft();
+    let top = randTop();
     $div.style.left = `${left}px`;
     $div.style.top = `${top}px`;
 
