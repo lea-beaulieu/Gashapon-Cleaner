@@ -66,14 +66,17 @@ strong {
     */
 }
 
-.game {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 2;
-    align-self: baseline;
+.balls {
+    z-index: 998;
     order: 1;
-    width: 490px;
+    width: 290px;
+    height: 400px;
+    display: block;
+    background: #ffc000;
+    padding: 0px;
+    border-style: none;
     position: absolute;
+    top: 200px;
 }
 
 .redbox {

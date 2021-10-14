@@ -88,12 +88,12 @@ function launchRedBox() {
     $div.style.top = `${top}px`;
 
     // Adding this NEW div within the "tab" section 
-    document.getElementsByTagName('table')[0].appendChild($div);
+    document.getElementsByClassName('balls')[0].appendChild($div);
 
     // Setting the actions WHEN clicking on the red box
     $div.onclick = function() {
         // Removing the red box
-        document.getElementsByTagName('table')[0].removeChild($div);
+        document.getElementsByClassName('balls')[0].removeChild($div);
         // Updating the score (+1pts for each red box)
         document.querySelector('#score span').innerText = ++pts;
     }
@@ -115,7 +115,7 @@ function launchBlueBox() {
 
 
     // Adding this NEW div within the "tab" section 
-    document.getElementsByTagName('table')[0].appendChild($div);
+    document.getElementsByClassName('balls')[0].appendChild($div);
 
 
     // Stopping the game WHEN clicking on a blue box
