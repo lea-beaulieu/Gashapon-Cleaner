@@ -94,7 +94,10 @@ strong {
     background-size: contain;
     filter: drop-shadow(0 0 0.25rem grey);
     transition: transform .2s;
-    animation: spinb 2s alternate infinite;
+    animation-name: spin;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
 }
 
 .bluebox:hover {
