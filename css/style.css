@@ -15,6 +15,10 @@ html {
     line-height: 50%;
 }
 
+p {
+    font-family: 'Bangers';
+}
+
 
 /* HEADER START */
 
@@ -22,14 +26,14 @@ h1 {
     font-family: 'Luckiest Guy', 'Bangers', cursive, 'Gill Sans Nova Cond Ultra Bold', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 100px;
     color: #F2F2F2;
-    line-height: 40%;
+    line-height: 38%;
     font-stretch: ultra-condensed;
     text-transform: uppercase;
     text-shadow: grey 1px 4px;
     transform: rotate(1.5deg);
 }
 
-.special-title {
+h1 p {
     text-align: center;
     font-stretch: none;
     font-size: 45px;
@@ -105,24 +109,42 @@ h1 {
 
 /* LAYOUT END */
 
-.card {
-    position: absolute;
+.introduction {
+    position: sticky;
+    color: #2527b4;
+    font-size: 15px;
+    margin: 0 auto;
+    padding: 0 1em;
+    text-align: center;
+    font-family: sans-serif;
+    width: 100%;
+    top: 5%;
+}
+
+.introduction p {
+    font-size: 26px;
+    line-height: 100%;
+    text-align: right;
+}
+
+.square {
+    position: sticky;
     background-color: white;
     box-shadow: 0 3px 11px grey;
     margin: 0 auto;
     padding: 0 1em;
     text-align: center;
     font-family: sans-serif;
-    max-width: 40em;
-    /* This can be any size (or none-existent), I simply put this here to preserve a card design while having paragraph text */
-    top: 10%;
+    width: 40%;
+    height: 40%;
+    top: 40%;
 }
 
 .flex-wrapper {
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     /* needed to horizontally center content */
     align-self: auto;
     height: 60%;
