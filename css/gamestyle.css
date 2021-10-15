@@ -85,7 +85,6 @@ strong {
     height: 25%;
     position: absolute;
     background: black;
-    /*border: 1px solid white;*/
     background: url("https://github.com/lea-beaulieu/module1GAME/blob/temporary/bluebox.png?raw=true") center no-repeat;
     background-size: contain;
     filter: drop-shadow(0 0 0.25rem grey);
