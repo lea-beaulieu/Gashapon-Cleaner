@@ -54,12 +54,6 @@ strong {
     height: 800px;
     margin-right: 3em;
     transform: translateY(-1em);
-    /*
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 1;
-    align-self: flex-start;
-    */
 }
 
 .bodybox {
@@ -70,7 +64,6 @@ strong {
     width: 610px;
     height: 380px;
     display: block;
-    /*background: #ffc000;*/
     padding: 0px;
     border-style: none;
     position: absolute;

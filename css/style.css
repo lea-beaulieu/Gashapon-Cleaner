@@ -197,11 +197,11 @@ h1 p {
 }
 
 .victory {
-    position: relative;
+    position: inherit;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    top: 100px;
+    margin-top: 100px;
 }
 
 .victory h2 {
@@ -218,6 +218,14 @@ h1 p {
     color: rgb(83, 153, 83);
 }
 
+.victory img {
+    position: inherit;
+    width: 9%;
+    height: 9%;
+    z-index: 999;
+    right: 450px;
+}
+
 .defeat {
     position: relative;
     display: flex;
@@ -227,9 +235,11 @@ h1 p {
 }
 
 .defeat h2 {
+    position: inherit;
     text-align: center;
     font-family: 'Luckiest Guy';
     font-size: 60px;
+    padding-top: 20px;
     color: rgb(255, 177, 148);
     text-transform: unset
 }
@@ -240,4 +250,10 @@ h1 p {
     font-stretch: ultra-expanded;
     color: rgb(255, 177, 148);
     text-transform: lowercase;
+}
+
+.defeat img {
+    position: relative;
+    width: 25%;
+    z-index: 999;
 }
