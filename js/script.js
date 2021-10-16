@@ -55,11 +55,11 @@ function render() {
 };
 
 function defineStatus() {
-    if (document.getElementById('countdown').textContent === "00:00" && pts >= 24) {
+    if (document.getElementById('countdown').textContent === "00:00" && pts >= 27) {
         countdown.innerHTML = "00:00";
         //setTimeout(alert("Yes, you nailed it !!"), 2000)
         location.replace("victory.html");
-    } else if (document.getElementById('countdown').textContent === "00:00" && pts < 24) {
+    } else if (document.getElementById('countdown').textContent === "00:00" && pts < 27) {
         countdown.innerHTML = "00:00";
         //setTimeout(alert("GAME OVER ! You did party too much yesterday. don't you ?"), 2000)
         location.replace("defeat.html");
@@ -133,7 +133,7 @@ function launchBlueBox() {
     document.getElementsByClassName('bodybox')[0].appendChild($div);
 
 
-    // Alerting WHEN clicking on a blue box
+    // Stopping the game WHEN clicking on a blue box
     $div.onclick = function() {
         alert("Hum stay focus, you are not an huge fan of DBZ, dont you ?");
         //location.replace("defeat.html");
@@ -147,8 +147,8 @@ function launchBlueBox() {
 function startActions() {
     //starting countdown
     start()
-        //starting the boxes launching after 0.1 scds
-    setTimeout(boxSequence, 100)
+        //starting the boxes launching after 3 scds
+    setTimeout(boxSequence, 200)
 
 }
 
