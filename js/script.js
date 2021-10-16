@@ -73,7 +73,7 @@ function defineStatus() {
 let counterBoxSequence = 1;
 
 
-// (CONFIG) Defining the BoxSequence launch, i.e. 3 Red boxes + 1 Blue box each 2 seconds during 24 seconds
+// (CONFIG) Defining the BoxSequence launch, i.e. 3 Red boxes 
 const boxSequence = function() {
     launchBlueBox();
     launchRedBox();
@@ -84,7 +84,7 @@ const boxSequence = function() {
     timeoutId = setTimeout(boxSequence, 3000);
     counterBoxSequence += 1;
 
-    if (counterBoxSequence > 8) {
+    if (counterBoxSequence > 9) {
         clearTimeout(timeoutId);
     }
 };
@@ -133,7 +133,7 @@ function launchBlueBox() {
     document.getElementsByClassName('bodybox')[0].appendChild($div);
 
 
-    // Stopping the game WHEN clicking on a blue box
+    // Alerting WHEN clicking on a blue box
     $div.onclick = function() {
         alert("Hum stay focus, you are not an huge fan of DBZ, dont you ?");
         //location.replace("defeat.html");
@@ -147,8 +147,8 @@ function launchBlueBox() {
 function startActions() {
     //starting countdown
     start()
-        //starting the boxes launching after 3 scds
-    setTimeout(boxSequence, 3000)
+        //starting the boxes launching after 0.1 scds
+    setTimeout(boxSequence, 100)
 
 }
 
