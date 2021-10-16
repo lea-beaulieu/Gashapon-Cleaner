@@ -110,7 +110,7 @@ h1 p {
 /* LAYOUT END */
 
 .introduction {
-    position: sticky;
+    position: absolute;
     color: #2527b4;
     font-size: 15px;
     margin: 0 auto;
@@ -129,27 +129,25 @@ h1 p {
 
 .square {
     position: sticky;
-    background-color: white;
-    box-shadow: 0 3px 11px grey;
+    background-color: #D9D9D9;
     margin: 0 auto;
     padding: 0 1em;
     text-align: center;
     font-family: sans-serif;
-    width: 40%;
-    height: 40%;
-    top: 40%;
+    width: 48%;
+    height: 48%;
+    top: 50%;
 }
 
 .flex-wrapper {
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     /* needed to horizontally center content */
     align-self: auto;
     height: 60%;
     width: 35%;
-    background-color: red;
     /* set based on layout (25% +30%) */
     left: 55%;
     top: 5%;
