@@ -57,10 +57,12 @@ function render() {
 function defineStatus() {
     if (document.getElementById('countdown').textContent === "00:00" && pts >= 24) {
         countdown.innerHTML = "00:00";
-        setTimeout(alert("won"), 2000)
+        //setTimeout(alert("Yes, you nailed it !!"), 2000)
+        location.replace("victory.html");
     } else if (document.getElementById('countdown').textContent === "00:00" && pts < 24) {
         countdown.innerHTML = "00:00";
-        setTimeout(alert("lose"), 2000)
+        //setTimeout(alert("GAME OVER ! You did party too much yesterday. don't you ?"), 2000)
+        location.replace("defeat.html");
     }
 }
 
@@ -133,7 +135,7 @@ function launchBlueBox() {
 
     // Stopping the game WHEN clicking on a blue box
     $div.onclick = function() {
-        alert("you lose");
+        alert("Hum stay focus, you are not an huge fan of DBZ, dont you ?");
         //location.replace("defeat.html");
     }
 
