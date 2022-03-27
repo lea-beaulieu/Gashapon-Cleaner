@@ -84,6 +84,8 @@ strong {
 }
 
 
+
+
 /*
 @keyframes balance {
     0% {
@@ -128,12 +130,47 @@ strong {
     height: 25%;
     position: absolute;
     background: black;
-    background: url("https://github.com/lea-beaulieu/module1GAME/blob/main/images/boxes/redboxmain.png?raw=true") center no-repeat;
+    background: url("https://github.com/lea-beaulieu/Gashapon-Cleaner/blob/main/images/boxes/redboxmain.png?raw=true") center no-repeat;
     background-size: contain;
     filter: drop-shadow(0 0 0.25rem grey);
 }
 
+.redbox2 {
+    transform: translateY(-1em);
+    order: inherit;
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    background: black;
+    background: url("https://github.com/lea-beaulieu/Gashapon-Cleaner/blob/main/images/boxes/redboxmario5.png?raw=true") center no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0 0 0.25rem grey);
+}
+
+.redbox3 {
+    transform: translateY(-1em);
+    order: inherit;
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    background: black;
+    background: url("https://github.com/lea-beaulieu/Gashapon-Cleaner/blob/main/images/boxes/redboxmario6.png?raw=true") center no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0 0 0.25rem grey);
+}
+
+
 .redbox:hover {
+    transform: rotate(-0.10turn) scale(1.3);
+    filter: drop-shadow(0 0 11px crimson);
+}
+
+.redbox2:hover {
+    transform: rotate(-0.10turn) scale(1.3);
+    filter: drop-shadow(0 0 11px crimson);
+}
+
+.redbox3:hover {
     transform: rotate(-0.10turn) scale(1.3);
     filter: drop-shadow(0 0 11px crimson);
 }
@@ -150,7 +187,7 @@ strong {
 
 #startbutton {
     position: absolute;
-    left: 780px;
+    left: 785px;
     top: 615px;
     z-index: 999;
     color: white;

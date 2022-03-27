@@ -28,9 +28,9 @@ var remainTime;
 
 //(CONFIG) 1. Defining the countdown rules
 function start() {
-    remainTime = 30;
+    remainTime = 15;
     //for debug
-    console.log("yes");
+    console.log("yes, set the countdown");
     render();
     // Setting the countdown parameters, -1scd applied to the "counter"
     counter = setInterval(() => {
@@ -55,13 +55,14 @@ function render() {
 };
 
 function defineStatus() {
-    if (document.getElementById('countdown').textContent === "00:00" && pts >= 27) {
+    // 15 = 3 red boxes x 5 sequences
+    if (document.getElementById('countdown').textContent === "00:00" && pts >= 15) {
         countdown.innerHTML = "00:00";
         //setTimeout(alert("Yes, you nailed it !!"), 2000)
         location.replace("victory.html");
-    } else if (document.getElementById('countdown').textContent === "00:00" && pts < 27) {
+    } else if (document.getElementById('countdown').textContent === "00:00" && pts < 15) {
         countdown.innerHTML = "00:00";
-        //setTimeout(alert("GAME OVER ! You did party too much yesterday. don't you ?"), 2000)
+        //setTimeout(alert("GAME OVER !"), 2000)
         location.replace("defeat.html");
     }
 }
@@ -69,7 +70,7 @@ function defineStatus() {
 
 // THE GAME CONTENT
 
-// (CONFIG) Counting occurences of sequence (8 sequences in total during the game)
+// (CONFIG) Counting occurences of sequence (5 sequences in total during the game)
 let counterBoxSequence = 1;
 
 
@@ -77,14 +78,14 @@ let counterBoxSequence = 1;
 const boxSequence = function() {
     launchBlueBox();
     launchRedBox();
-    setTimeout(launchRedBox, 1000);
-    setTimeout(launchRedBox, 2000);
+    setTimeout(launchRedBox2, 1000);
+    setTimeout(launchRedBox3, 2000);
     //for Debug
     console.log(counterBoxSequence)
     timeoutId = setTimeout(boxSequence, 3000);
     counterBoxSequence += 1;
 
-    if (counterBoxSequence > 9) {
+    if (counterBoxSequence > 5) {
         clearTimeout(timeoutId);
     }
 };
@@ -115,6 +116,58 @@ function launchRedBox() {
 
 }
 
+function launchRedBox2() {
+
+    // Create a NEW div with the class 'redbox', each red box is separated in a proper div
+    let $div = document.createElement('div');
+    $div.classList.add('redbox2');
+    // Setting a random position where the box will appear
+    let left = randLeft();
+    let top = randTop();
+    $div.style.left = `${left}px`;
+    $div.style.top = `${top}px`;
+
+    // Adding this NEW div within the "tab" section 
+    document.getElementsByClassName('bodybox')[0].appendChild($div);
+
+    // Setting the actions WHEN clicking on the red box
+    $div.onclick = function() {
+        // Removing the red box
+        document.getElementsByClassName('bodybox')[0].removeChild($div);
+        // Updating the score (+1pts for each red box)
+        document.querySelector('#score span').innerText = ++pts;
+    }
+
+}
+
+
+function launchRedBox3() {
+
+    // Create a NEW div with the class 'redbox', each red box is separated in a proper div
+    let $div = document.createElement('div');
+    $div.classList.add('redbox3');
+    // Setting a random position where the box will appear
+    let left = randLeft();
+    let top = randTop();
+    $div.style.left = `${left}px`;
+    $div.style.top = `${top}px`;
+
+    // Adding this NEW div within the "tab" section 
+    document.getElementsByClassName('bodybox')[0].appendChild($div);
+
+    // Setting the actions WHEN clicking on the red box
+    $div.onclick = function() {
+        // Removing the red box
+        document.getElementsByClassName('bodybox')[0].removeChild($div);
+        // Updating the score (+1pts for each red box)
+        document.querySelector('#score span').innerText = ++pts;
+    }
+
+}
+
+
+
+
 // (CONFIG) Defining property of ONE BLUE box launch
 function launchBlueBox() {
 
@@ -133,9 +186,9 @@ function launchBlueBox() {
     document.getElementsByClassName('bodybox')[0].appendChild($div);
 
 
-    // Stopping the game WHEN clicking on a blue box
+    // Alterting the game WHEN clicking on a blue box
     $div.onclick = function() {
-        alert("Hum stay focus, you are not an huge fan of DBZ, dont you ?");
+        alert("Hum stay focus, our customers will arrive soon !");
         //location.replace("defeat.html");
     }
 
@@ -147,10 +200,10 @@ function launchBlueBox() {
 function startActions() {
     //starting countdown
     start()
-        //starting the boxes launching after 3 scds
-    setTimeout(boxSequence, 200)
+        //starting the boxes launching after 0,5 scd
+    setTimeout(boxSequence, 50)
 
 }
 
-// (DIRECT IMPACT ON THE GAME) Start : Launching the countdown and the boxes (x30 sequences)
+// (DIRECT IMPACT ON THE GAME) Start : Launching the countdown and the boxes 
 startbutton.onclick = function() { startActions() };
