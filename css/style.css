@@ -155,7 +155,7 @@ h1 p {
 
 .square a {
     position: absolute;
-    left: 102px;
+    left: 100px;
     top: 125px;
     z-index: 1000;
     background: transparent;
